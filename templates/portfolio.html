@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5">
+    <h2 class="text-center mb-4" data-aos="fade-up">Our Dashboards</h2>
+    <div class="row g-4 justify-content-center">
+        {% for i in range(1, 6) %}
+        <div class="col-md-6" data-aos="zoom-in" data-aos-delay="{{ i*100 }}">
+            <div class="card shadow-sm hover-card">
+                <img src="{{ url_for('static', filename='images/dashboard_' ~ i ~ '.png') }}" class="card-img-top" alt="Dashboard {{ i }}">
+                <div class="card-body">
+                    <h5 class="card-title">Dashboard {{ i }}</h5>
+                    <p class="card-text">Insightful data visualization for manufacturing KPIs.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
